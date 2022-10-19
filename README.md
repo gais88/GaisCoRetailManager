@@ -1,1 +1,1 @@
-# GaisCoRetailManager
+# GaisCo Retail Manager
