@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="46154847-bfe8-4103-b83d-87157fa83e6a" ChangeDateTime="10/22/2022 10:28:44">
+    <Property Name="ElementName" Value="[dbo].[User].[name]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[User]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="authUserId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e861480b-d98e-420c-9dd3-a1b6ab2f6517" ChangeDateTime="10/22/2022 10:29:06">
+    <Property Name="ElementName" Value="[dbo].[User].[authUserId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[User]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="AuthUserId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6e26632c-ea26-4d86-a689-c2c3a7a8f7ae" ChangeDateTime="10/22/2022 10:41:36">
+    <Property Name="ElementName" Value="[dbo].[User].[AuthUserId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[User]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c18d47c7-024d-4191-b254-130dde2f8778" ChangeDateTime="10/22/2022 10:56:38">
+    <Property Name="ElementName" Value="[dbo].[Product].[name]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Product]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ProductName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d3d5b244-0251-4f5a-8293-75e7136e1cb8" ChangeDateTime="10/22/2022 10:58:28">
+    <Property Name="ElementName" Value="[dbo].[Product].[GetLastModified]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Product]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="LastModified" />
+  </Operation>
+</Operations>
