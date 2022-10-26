@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using GRMDesktopUI.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,36 @@ namespace GRMDesktopUI.ViewModels
     {
         private string _userName;
         private string _password;
+        private IApiHelper _apiHelper;
+        private bool _isErroMessage;
+        private string _erroMessage;
 
+        public string ErroMessage
+        {
+            get { return _erroMessage; }
+            set {
+                _erroMessage = value;
+                NotifyOfPropertyChange(() => ErroMessage);
+                NotifyOfPropertyChange(() => IsErrorVisible);
+            }
+        }
+
+
+        public bool IsErrorVisible
+        {
+            get {
+                bool output = false;
+                if (ErroMessage?.Length> 0) { output = true; }
+                    
+                return output;
+            }
+           
+        }
+
+        public LoginViewModel(IApiHelper apiHelper)
+        {
+            _apiHelper = apiHelper;
+        }
         public string UserName
         {
             get { return _userName; }
@@ -43,9 +73,17 @@ namespace GRMDesktopUI.ViewModels
             }
 
         }
-        public void Login()
+        public async Task Login()
         {
-            Console.WriteLine(_userName + "" + _password);
+            try
+            {
+                ErroMessage = "";
+                var result = await _apiHelper.Authenticate(UserName, Password);
+            }
+            catch(Exception e)
+            {
+                ErroMessage = e.Message;
+            }
         }
 
 
