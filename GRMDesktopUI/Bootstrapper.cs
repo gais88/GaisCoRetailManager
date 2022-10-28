@@ -1,5 +1,7 @@
 ﻿using Caliburn.Micro;
 using GRMDesktopUI.Helper;
+using GRMDesktopUI.Library.Helper;
+using GRMDesktopUI.Library.Models;
 using GRMDesktopUI.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -30,6 +32,7 @@ namespace GRMDesktopUI
             _container
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>()
+                .Singleton<ILogInUser, LogInUser>()
                 .Singleton<IApiHelper, ApiHelper>();
 
             GetType().Assembly.GetTypes()

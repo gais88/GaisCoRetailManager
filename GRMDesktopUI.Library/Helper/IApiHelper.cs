@@ -1,10 +1,12 @@
 ﻿using System.Threading.Tasks;
-using GRMDesktopUI.Models;
+using GRMDesktopUI.Library.Models;
 
-namespace GRMDesktopUI.Helper
+
+namespace GRMDesktopUI.Library.Helper
 {
     public interface IApiHelper
     {
         Task<AuthenticatedUser> Authenticate(string username, string password);
+        Task LoginInformation(string token);
     }
 }

@@ -1,5 +1,5 @@
 ﻿using Caliburn.Micro;
-using GRMDesktopUI.Helper;
+using GRMDesktopUI.Library.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -79,6 +79,9 @@ namespace GRMDesktopUI.ViewModels
             {
                 ErroMessage = "";
                 var result = await _apiHelper.Authenticate(UserName, Password);
+                // captuer login info user
+                await _apiHelper.LoginInformation(result.access_token);
+
             }
             catch(Exception e)
             {
