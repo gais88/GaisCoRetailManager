@@ -30,7 +30,13 @@
         <!-- header-->
         <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Text="Sales Page" FontSize="50"  Margin="0 0 0 30"/>
         <!-- colmun 0-->
-        <ListBox x:Name="Products" Grid.Column="0" Grid.Row="1" MinHeight="250" MinWidth="200"/>
+        <ListBox x:Name="Products" Grid.Column="0" Grid.Row="1" MinHeight="250" MinWidth="200">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding ProductName}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <!-- colmun 1-->
         <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1" Margin="20 0">
             <TextBlock Text="Quantity" />

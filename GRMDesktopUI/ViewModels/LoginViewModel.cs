@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using GRMDesktopUI.Events;
 using GRMDesktopUI.Library.Helper;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace GRMDesktopUI.ViewModels
         private string _userName;
         private string _password;
         private IApiHelper _apiHelper;
+        private readonly IEventAggregator _event;
         private bool _isErroMessage;
         private string _erroMessage;
 
@@ -38,9 +40,10 @@ namespace GRMDesktopUI.ViewModels
            
         }
 
-        public LoginViewModel(IApiHelper apiHelper)
+        public LoginViewModel(IApiHelper apiHelper , IEventAggregator eventAggr)
         {
             _apiHelper = apiHelper;
+            _event = eventAggr;
         }
         public string UserName
         {
@@ -82,6 +85,7 @@ namespace GRMDesktopUI.ViewModels
                 // captuer login info user
                 await _apiHelper.LoginInformation(result.access_token);
 
+                await _event.PublishOnUIThreadAsync(new LogInEvent());
             }
             catch(Exception e)
             {
